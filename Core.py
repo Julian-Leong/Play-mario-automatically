@@ -24,7 +24,6 @@ gola = input("Gola:\n")
 late_archive = 2
 
 # 寄存器变量
-brick = ctypes.c_int()      # 砖块
 bridge = ctypes.c_int()         # 桥
 environment = ctypes.c_int()        # 环境
 firstworld = ctypes.c_int()     # 大关卡
@@ -60,15 +59,6 @@ kerneldll = ctypes.windll.LoadLibrary(".\\kernel32.dll")        # 以stdcall调�
 
 # 等待接口设置结束
 time.sleep(0.5)
-
-
-def get_brick():
-    '''
-    读取砖块位置的内存；
-
-    '''
-    kerneldll.ReadProcessMemory(int(phand), 0x0059A6E8, ctypes.byref(brick), 1, None)
-    return brick.value
 
 
 def get_bridge():
