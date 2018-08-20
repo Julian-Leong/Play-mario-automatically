@@ -1,37 +1,37 @@
-����������
+开发环境：
 	Python 3.7.0
 
-��չ����
-	PyUserInput������ֱ����pip��װ��
+拓展包：
+	PyUserInput（可以直接用pip安装）
 
-���л�����
-	VirtuaNES + Super Mario Bros.nes�����ļ��У������úã�����������ģ�
+运行环境：
+	VirtuaNES + Super Mario Bros.nes（在文件中，已配置好，请勿随意更改）
 
-ʹ�÷�����
-	���úÿ���������
-	��Core.py��
-	��Mode:������������
-		None��ÿ��С�ؿ������жϲ������¼��
-		long��ÿ����ؿ������жϲ������¼��
-		all��ֱ��ͨ�زŻ��жϲ������¼��
-	��Start:����������ʼλ�ã�
-		��ʽΪ num-num��
-		None����ʹ�ó�ʼλ�ã�
+使用方法：
+	配置好开发环境；
+	打开Core.py；
+	“Mode:”后可输入命令：
+		None：每个小关卡都会中断并保存记录；
+		long：每个大关卡都会中断并保存记录；
+		all：直到通关才会中断并保存记录；
+	“Start:”后可输入初始位置：
+		格式为 num-num；
+		None：不使用初始位置；
 
-	��Gola:���������Ŀ��λ�ã�
-		��ʽΪ num-num��
-		None��û��Ŀ�ֱ꣬���˳���
+	“Gola:”后可输入目标位置：
+		格式为 num-num；
+		None：没有目标，直接退出；
 
-	�����󰴻س����˳���
+	结束后按回车键退出；
 
-ע�⣺
-	����ǰ������VirtuaNESex.exeΪnes�ļ���Ĭ��Ӧ�ã�
-	��������ʱ����ʹ����ꡢ�����Լ����������豸��
-	��ʹ�ñʼǱ��������У��뱣�ֽ�ͨ��Դ���������ܴ���ܻ����δ֪����
-	����һ���ļ��ʳ���ס����������˳����ɵ��F9�����õ�ǰ�ؿ���
-	��ʹ��IDE��py�ļ�����;�˳�ʱ���ȹر�.py�ļ�����ر�.nes�ļ���
+注意：
+	运行前先设置VirtuaNESex.exe为nes文件的默认应用；
+	程序运行时请勿使用鼠标、键盘以及其他输入设备；
+	若使用笔记本电脑运行，请保持接通电源，否则程序很大可能会出现未知错误；
+	存在一定的几率程序卡住，如果不想退出，可点击F9键重置当前关卡；
+	若使用IDE打开py文件，中途退出时请先关闭.py文件，后关闭.nes文件；
 
-��ӭ�����е�ϣ�������ṩ�����ϵ�ָ�����飡
+欢迎且迫切地希望您能提供技术上的指导或建议！
 
 Julian-Leong
-�ڹ�Ԫ2018��08��18�հ���
+于公元2018年08月18日傍晚
