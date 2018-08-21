@@ -1,3 +1,6 @@
+# coding=utf-8
+
+
 import ctypes
 import pykeyboard
 import random
@@ -18,7 +21,7 @@ mode = input("Mode:\n")
 start = input("Start:\n")
 
 # 用户目标记录变量
-gola = input("Gola:\n")       
+gola = input("Gola:\n")
 
 # 存档指示变量
 late_archive = 2
@@ -51,7 +54,7 @@ time.sleep(0.5)
 # 获得内存接口
 PROCESS_ALL_ACCESS = (0x000F0000 | 0x00100000 | 0xFFF)      # 获得进程所有能获得的访问权限
 hwnd = win32gui.FindWindow("VirtuaNESwndclass", "VirtuaNES - Super Mario Bros")     # 获得进程顶层窗口的句柄
-hid,pid = win32process.GetWindowThreadProcessId(hwnd)       # 获得进程顶层窗口的PID
+hid, pid = win32process.GetWindowThreadProcessId(hwnd)       # 获得进程顶层窗口的PID
 phand = win32api.OpenProcess(PROCESS_ALL_ACCESS, False, pid)        # 打开进程顶层窗口的句柄
 
 # 获得内存管理方法
@@ -62,92 +65,92 @@ time.sleep(0.5)
 
 
 def get_bridge():
-    '''
+    """
     读取桥梁状态的内存；
 
-    '''
+    """
     kerneldll.ReadProcessMemory(int(phand), 0x0059A6D4, ctypes.byref(bridge), 1, None)
     return bridge.value
 
 
 def get_environment():
-    '''
+    """
     读取环境状态的内存；
 
-    '''
+    """
     kerneldll.ReadProcessMemory(int(phand), 0x0059A6B2, ctypes.byref(environment), 1, None)
     return environment.value
 
 
 def get_firstworld():
-    '''
+    """
     读取大关卡位置的内存；
 
-    '''
+    """
     kerneldll.ReadProcessMemory(int(phand), 0x0059A6C3, ctypes.byref(firstworld), 1, None)
     return firstworld.value
 
 
 def get_jump():
-    '''
+    """
     读取跳跃状态的内存；
 
-    '''
+    """
     kerneldll.ReadProcessMemory(int(phand), 0x00599F81, ctypes.byref(jump), 1, None)
     return jump.value
 
 
 def get_lastworld():
-    '''
+    """
     读取小关卡位置的内存；
 
-    '''
+    """
     kerneldll.ReadProcessMemory(int(phand), 0x0059A6C0, ctypes.byref(lastworld), 1, None)
     return lastworld.value
 
 
 def get_live():
-    '''
+    """
     读取生命状态内存；
 
-    '''
+    """
     kerneldll.ReadProcessMemory(int(phand), 0x0059A715, ctypes.byref(live), 1, None)
     return live.value
 
 
 def get_load():
-    '''
+    """
     读取加载状态的内存；
 
-    '''
+    """
     kerneldll.ReadProcessMemory(int(phand), 0x00576F8C, ctypes.byref(load), 1, None)
     return load.value
 
 
 def get_pipeline():
-    '''
+    """
     读取水管状态的内存；
 
-    '''
+    """
     kerneldll.ReadProcessMemory(int(phand), 0x00599F68, ctypes.byref(pipeline), 1, None)
     return pipeline.value
 
 
 def get_speed():
-    '''
+    """
     读取移动速度的内存；
 
-    '''
+    """
     kerneldll.ReadProcessMemory(int(phand), 0x0059A664, ctypes.byref(speed), 1, None)
     return speed.value
 
 
 def jump_random(k):
-    '''
+    """
     回档或半随机高度跳跃；
     k > 0时会尝试半随机高度跳跃，否则二级回档；
 
-    '''
+    """
     # 声明全局变量
     global late_archive
     global back_times
@@ -244,12 +247,11 @@ def jump_random(k):
     return 0
 
 
-
 def walk_up():
-    '''
+    """
     尝试性前进；
 
-    '''
+    """
     # 声明全局变量
     global late_archive
     global dead_times
@@ -269,7 +271,7 @@ def walk_up():
         time.sleep(0.05)
         key.release_key(str(late_archive))
 
-    #半随机前进距离
+    # 半随机前进距离
     i = random.uniform(0.2, 0.5)
     j = time.time()
 
@@ -304,11 +306,11 @@ def walk_up():
 
 
 def next_pass():
-    '''
+    """
     储存练习记录；
     练习前的初始化；
 
-    '''
+    """
     # 声明全局变量
     global late_archive
 
@@ -400,10 +402,10 @@ def next_pass():
 
 
 def test():
-    '''
+    """
     练习结束后的测试；
 
-    '''
+    """
     # 声明全局变量
     global used_second
     used_second = time.time() - used_second
@@ -434,10 +436,10 @@ def test():
 
 
 def main():
-    '''
+    """
     实现工作模式的选择和实时数据的输出；
 
-    '''
+    """
     # 声明全局变量
     global used_second
 
