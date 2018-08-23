@@ -22,5 +22,5 @@ accelerate to the right, keep trying, and if Mario dies or hits a wall, read fil
 keep cycling, until it pass the target checkpoint.
 
 Certain checkpoints are mazes,like 8-4,
-at present "Artificial mental retardation" failed to pass them
-I will continue to update the algorithm to through them.
+at present "Artificial mental retardation" failed to pass them,
+and I will continue to update the algorithm to through them.
